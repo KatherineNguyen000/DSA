@@ -12,20 +12,23 @@ public class MinimumGap {
 	public static int minimumGap(int[] a) {
 		HashMap<Integer, Integer> lastVisitedNumber = new HashMap<>();
 		int minGap = -1; // We haven't found any valid gaps yet
-		boolean noGap = false; // The first valid gap we found
+		boolean isGap = false;
 
 		for (int i = 0; i < a.length; i++) {
 			if (lastVisitedNumber.containsKey(a[i])) {
 				int gap = i - lastVisitedNumber.get(a[i]);
-				if (!noGap || gap < minGap) {
+				if (!isGap || gap < minGap) {
 					minGap = gap;
 				}
-				noGap = true;
+				isGap = true;
 			}
 			lastVisitedNumber.put(a[i], i);
 		}
-
-		return noGap ? minGap : -1;
+		if (isGap) {
+			return minGap;
+		} else {
+			return -1;
+		}
 	}
 }
 // Time complexity = O(n)
