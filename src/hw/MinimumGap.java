@@ -10,7 +10,7 @@ public class MinimumGap {
 	}
 
 	public static int minimumGap(int[] a) {
-		HashMap<Integer, Integer> lastVisitedNumber = new HashMap<>();
+		HashMap<Integer, Integer> lastVisitedNumber = new HashMap<Integer, Integer>();
 		int minGap = -1; // We haven't found any valid gaps yet
 		boolean isGap = false;
 
