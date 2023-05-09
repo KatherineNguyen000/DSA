@@ -12,14 +12,14 @@ public class TheFeast {
 		for (int i = 0; i < t; i++) {
 			System.out.println();
 			System.out.println("The amount of money Bobby has:");
-			int n = sc.nextInt(); // amount of money
+			int n = sc.nextInt();
 			System.out.println("Each chocolate bar cost him:");
-			int c = sc.nextInt(); // cost of each chocolate bar
+			int c = sc.nextInt();
 			System.out.println("The number of wrappers he can turn in for a free bar:");
-			int m = sc.nextInt(); // number of free chocolate bars' wrappers
+			int m = sc.nextInt();
 
 			int totalChocolateBar = theFeast(n, c, m);
-			System.out.println("--- Total number of chocolate bars Bobby can eat : " +totalChocolateBar);
+			System.out.println("--- Total number of chocolate bars Bobby can eat : " + totalChocolateBar);
 		}
 		sc.close();
 	}
@@ -37,3 +37,4 @@ public class TheFeast {
 		return chocoBars; // total number of chocolate bars Bobby can eat
 	}
 }
+// Time complexity O(log n)
