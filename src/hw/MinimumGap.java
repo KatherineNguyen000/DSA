@@ -10,19 +10,19 @@ public class MinimumGap {
 	}
 
 	public static int minimumGap(int[] a) {
-		HashMap<Integer, Integer> lastVisitedNumber = new HashMap<Integer, Integer>();
+		HashMap<Integer, Integer> visitedIndex = new HashMap<Integer, Integer>();
 		int minGap = -1; // We haven't found any valid gaps yet
 		boolean isGap = false;
 
 		for (int i = 0; i < a.length; i++) {
-			if (lastVisitedNumber.containsKey(a[i])) {
-				int gap = i - lastVisitedNumber.get(a[i]);
+			if (visitedIndex.containsKey(a[i])) {
+				int gap = i - visitedIndex.get(a[i]);
 				if (!isGap || gap < minGap) {
 					minGap = gap;
 				}
 				isGap = true;
 			}
-			lastVisitedNumber.put(a[i], i);
+			visitedIndex.put(a[i], i);
 		}
 		if (isGap) {
 			return minGap;
